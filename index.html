@@ -119,6 +119,22 @@ footer {
 
 <div class="section">
   <h2>Recruitment</h2>
+  <div class="section">
+  <h2>Registrasi Clan Fox</h2>
+  <div class="card">
+
+    <label>Nama Minecraft</label><br>
+    <input id="mcname" type="text" placeholder="Nama MC kamu"><br><br>
+
+    <label>Nomor WhatsApp</label><br>
+    <input id="wanumber" type="text" Var admin = 085339224947><br><br>
+
+    <button class="button" onclick="sendWA()">
+      Daftar Sekarang
+    </button>
+
+  </div>
+</div>
   <div class="card">
     <p><b>Syarat Join:</b></p>
     <ul>
@@ -136,6 +152,28 @@ footer {
 <footer>
   © Clan Fox • Minecraft Community
 </footer>
+<script>
+function sendWA() {
+  var mc = document.getElementById("mcname").value;
+  var wa = document.getElementById("wanumber").value;
 
+  if (mc === "" || wa === "") {
+    alert("Lengkapi data dulu!");
+    return;
+  }
+
+  var admin = "6285339224947"; // GANTI KE WA KAMU
+
+  var text =
+    "Halo Admin Clan Fox\n" +
+    "Nama MC: " + mc + "\n" +
+    "WA: " + wa + "\n" +
+    "Saya ingin join Clan Fox";
+
+  var url = "https://wa.me/" + admin + "?text=" + encodeURIComponent(text);
+
+  location.href = url; // ⬅️ INI YANG FIX
+}
+</script>
 </body>
 </html>
